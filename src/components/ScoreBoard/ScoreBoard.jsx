@@ -1,7 +1,7 @@
 import React from 'react'
 import './ScoreBoard.css'
 
-const ScoreBoar = ({ xScore, oScore, xPlaying, tie }) => {
+const ScoreBoard = ({ xScore, oScore, xPlaying, tie }) => {
   return (
     <div className="scoreboard">
       <span className={`x-score ${xPlaying === true ? 'xScoreboard' : ''}`}>
@@ -15,4 +15,4 @@ const ScoreBoar = ({ xScore, oScore, xPlaying, tie }) => {
   )
 }
 
-export default ScoreBoar
+export default ScoreBoard

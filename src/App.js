@@ -5,7 +5,7 @@ import Modal from './components/Modal/Modal'
 import ScoreBoard from './components/ScoreBoard/ScoreBoard'
 
 function App() {
-  const [board, setBoard] = useState(Array(9).fill())
+  const [board, setBoard] = useState(Array(9).fill(null))
   const [xPlaying, setXPlaying] = useState(true)
   const [xScore, setXScore] = useState(0)
   const [oScore, setOScore] = useState(0)
@@ -67,6 +67,7 @@ function App() {
     for (let i = 0; i < WIN_CONDITIONS.length; i++) {
       const [x, y, z] = WIN_CONDITIONS[i]
 
+      // Iterate through win conditions and check if either player satisfies them
       if (board[x] && board[x] === board[y] && board[y] === board[z]) {
         return board[x]
       }
@@ -104,7 +105,7 @@ function App() {
       </div>
 
       <button className="gameOver" onClick={() => setShowModal(!showModal)}>
-        Gamer Over
+        Game Over
       </button>
       <Modal
         showModal={showModal}
